@@ -5,9 +5,8 @@ import java.util.Scanner;
 
 public class AddCommand {
 	
-	public static void exec(String type) {
+	public static void exec(String type, Scanner s) {
 		InventoryItem newItem = null;
-		Scanner s = new Scanner(System.in);
 	
 		System.out.println("Enter inventory quantity: ");
 		int quantity = Integer.parseInt(s.next());
@@ -20,7 +19,7 @@ public class AddCommand {
 
 		switch (type) {
 			case "album":
-				newItem = new Album();
+				//newItem = new Album();
 				break;
 			case "movie":
 				System.out.println("Enter Name: ");
@@ -34,16 +33,14 @@ public class AddCommand {
 				newItem = new Movie(name, length, year, contentRating, quantity, format, location, licensingNumber);
 				break;
             case "tvshow":
-                newItem = new TVShow();
+                //newItem = new TVShow();
+                break;
 			default:
 				System.out.println("Invalid item type");
-				s.close();
 				return;
 		}
 		
-		s.close();
-		FakeDatabase database = FakeDatabase.getInstance();
-		database.addItem(newItem);
+		FakeDatabase.getInstance().addItem(newItem);
 		System.out.println("New " + type + " added.");
 	}
 

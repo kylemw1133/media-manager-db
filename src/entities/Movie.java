@@ -12,5 +12,10 @@ public class Movie extends InventoryItem {
 		year = y;
 		contentRating = conRat;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + "Name: " + name + "\nLength: " + length + "\nYear: " + year + "\nContent Rating: " + contentRating + "\n";
+	}
 
 }

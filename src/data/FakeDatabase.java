@@ -20,8 +20,14 @@ public class FakeDatabase implements Database {
 	public ArrayList<InventoryItem> inventoryItems = new ArrayList<InventoryItem>();
 	
 	public void addItem(InventoryItem item) {
-		inventoryItems.add(item);
-		System.out.println(inventoryItems);
+		if(inventoryItems.contains(item)) {
+			System.out.println("Item already in database. Check licensing number if this is an error.");
+		} else {
+			inventoryItems.add(item);
+		}
+		for(InventoryItem i : inventoryItems) {
+			System.out.println(i);
+		}
 	}
 	
 	// TODO:
