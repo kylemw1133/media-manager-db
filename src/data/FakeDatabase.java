@@ -3,6 +3,7 @@ package data;
 import java.util.ArrayList;
 import entities.InventoryItem;
 
+
 public class FakeDatabase implements Database {
 	
 	/* Singleton Pattern */
@@ -21,7 +22,6 @@ public class FakeDatabase implements Database {
 	
 	public void addItem(InventoryItem item) {
 		inventoryItems.add(item);
-		System.out.println(inventoryItems);
 	}
 	
 	// TODO:

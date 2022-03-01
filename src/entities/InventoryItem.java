@@ -11,5 +11,10 @@ public class InventoryItem {
 		location = loc;
 		licensingNumber = licNum;
 	}
-	
+	public void printAttributes() {
+		System.out.println(quantity);
+		System.out.println(format);
+		System.out.println(location);
+		System.out.println(licensingNumber);
+	}
 }

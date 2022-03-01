@@ -12,5 +12,13 @@ public class Movie extends InventoryItem {
 		year = y;
 		contentRating = conRat;
 	}
+	@Override
+	public void printAttributes() {
+		System.out.println(name);
+		System.out.println(length);
+		System.out.println(year);
+		System.out.println(contentRating);
+	}
+	
 
 }

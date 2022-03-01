@@ -15,10 +15,8 @@ public class Main {
 			String command = s.next();
 			switch (command) {
 			case "add":
-				
 				System.out.println("Enter type of item to add: ");
 				String inventoryType = s.next();
-				
 				AddCommand.exec(inventoryType);
 				break;
 			case "edit":
