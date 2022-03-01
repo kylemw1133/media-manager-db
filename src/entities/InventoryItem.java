@@ -8,6 +8,7 @@ public class InventoryItem {
 	public String format;
 	public String location;
 	public long licensingNumber;
+	public String name;
 
 	public void promptForAttributes(Scanner s) {
 		for (Field f : this.getClass().getFields()) {
@@ -43,6 +44,16 @@ public class InventoryItem {
 
 	public InventoryItem(Scanner s) {
 		this.promptForAttributes(s);
+	}
+	
+	public boolean canEdit(String attribute, String valueType) {
+		for(Field f : this.getClass().getFields()) {
+			Class<?> type = f.getType();
+			if(f.getName().equals(attribute) && type.getSimpleName().equals(valueType)) {
+				return true;
+			} 
+		}
+		return false;
 	}
 
 	@Override

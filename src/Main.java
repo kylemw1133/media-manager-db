@@ -16,10 +16,10 @@ public class Main {
 				AddCommand.exec(s);
 				break;
 			case "edit":
-				EditCommand.exec();
+				EditCommand.exec(s);
 				break;
 			case "search":
-				SearchCommand.exec();
+				SearchCommand.exec(s);
 				break;
 			case "order":
 				OrderCommand.exec();

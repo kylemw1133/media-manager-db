@@ -2,7 +2,7 @@ package data;
 
 import java.util.ArrayList;
 import entities.InventoryItem;
-
+import entities.Movie;
 
 public class FakeDatabase implements Database {
 	
@@ -32,12 +32,22 @@ public class FakeDatabase implements Database {
 	}
 	
 	// TODO:
-	public void editItem() {
-		System.out.println("Not implemented");
+	public void editItem(String type, String name, String attribute, String value) {
+		for(int i = 0; i<inventoryItems.size();i++) {
+			InventoryItem item = inventoryItems.get(i);
+			if(item.canEdit(attribute, value.getClass().getSimpleName())) {
+				//can edit item (how do we reach specific media item's attributes???
+				
+			}
+		}
 	}
 	
-	public void findItems() {
-		System.out.println("Not implemented");
+	public void findItems(String name) {
+		for(InventoryItem i:inventoryItems) {
+			if(i.name.equals(name)) {
+				System.out.println(i);
+			}
+		}
 	}
 	
 	public void orderItem() {
