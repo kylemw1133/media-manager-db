@@ -5,16 +5,18 @@ import data.*;
 
 public class Main {
 	
-	public static void main(String[] args) {
+	public int test = 5;
+	
+	public static void main(String[] args) {		
 		boolean promptUser = true;
 		Scanner s = new Scanner(System.in);
 		while(promptUser) {
 			System.out.println("Enter db command (add, edit, search, order, report, exit):");
-			String command = s.next();
+			String command = s.nextLine();
 			switch (command) {
 			case "add":
 				System.out.println("Enter type of item to add: ");
-				String inventoryType = s.next();
+				String inventoryType = s.nextLine();
 				AddCommand.exec(inventoryType, s);
 				break;
 			case "edit":
