@@ -12,6 +12,9 @@ public class AddCommand {
 		case "album":
 			newItem = new Album();
 			break;
+		case "tvshow":
+			newItem = new TVShow();
+			break;
 		default:
 			System.out.println("Invalid item type");
 			return;
