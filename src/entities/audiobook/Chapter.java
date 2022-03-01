@@ -11,10 +11,8 @@ public class Chapter {
         this.length = length;
     }
 
-    // print attributes of chapter
-    public void printChapter() {
-        System.out.println("Chapter detail:");
-        System.out.println("Name: " + name);
-        System.out.println("Length (in minutes) : " + length);
+    // return attributes of chapter
+    public String printChapter() {
+        return "[Chapter detail] Name: " + name + "Length (in minutes) : " + length;
     }
 }

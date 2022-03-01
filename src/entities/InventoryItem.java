@@ -11,10 +11,16 @@ public class InventoryItem {
 		location = loc;
 		licensingNumber = licNum;
 	}
-	public void printAttributes() {
-		System.out.println(quantity);
-		System.out.println(format);
-		System.out.println(location);
-		System.out.println(licensingNumber);
+	
+	@Override
+	public boolean equals(Object i) {
+		if(i instanceof InventoryItem)
+			return licensingNumber == ((InventoryItem) i).licensingNumber && location == ((InventoryItem) i).location;
+		return false;
+	}
+	
+	@Override
+	public String toString() {
+		return "Quantity: " + quantity + "\nFormat: " + format + "\nLocation: " + location + "\nLicensing Num: " + licensingNumber + "\n";
 	}
 }

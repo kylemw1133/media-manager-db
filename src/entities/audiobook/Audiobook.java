@@ -28,26 +28,19 @@ public class Audiobook extends InventoryItem {
         this.chapters = chapters;
     }
 
-    // prints :
+    // returns :
     // inventory item attributes
     // audiobook attributes
     // author attributes
     // chapter attributes (for each and every chapter)
     @Override
-    public void printAttributes() {
-        System.out.println("Audiobook details: ");
-        super.printAttributes();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("Name: " + name);
-        System.out.println("Reader: " + reader);
-        System.out.println("Length (in minutes): " + length);
-        System.out.println("Year: " + year);
-        this.author.printAuthor();
+    public String toString() {
+        String chapterInfo = "";
         for (Chapter c : chapters) {
-            c.printChapter();
+            chapterInfo += c.printChapter();
         }
+        return "[Audiobook details] " + super.toString() + "Name: " + name + "Reader: " + reader + "Length(min): "
+                + length + "Year: " + year + this.author.printAuthor() + chapterInfo;
     }
 
 }

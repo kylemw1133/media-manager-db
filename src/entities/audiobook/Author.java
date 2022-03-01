@@ -11,10 +11,8 @@ public class Author {
         this.authorID = authorID;
     }
 
-    // print attributes of author
-    public void printAuthor() {
-        System.out.println("Author Details");
-        System.out.println("Name: " + name);
-        System.out.println("Author_ID: " + authorID);
+    // return attributes of author
+    public String printAuthor() {
+        return "[Author Details] Name: " + name + " Author_ID: " + authorID;
     }
 }
