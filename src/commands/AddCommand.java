@@ -33,7 +33,8 @@ public class AddCommand {
 				int contentRating = Integer.parseInt(s.next());
 				newItem = new Movie(name, length, year, contentRating, quantity, format, location, licensingNumber);
 				break;
-			
+            case "tvshow":
+                newItem = new TVShow();
 			default:
 				System.out.println("Invalid item type");
 				s.close();
