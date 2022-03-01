@@ -8,7 +8,10 @@ import java.util.Scanner;
 
 public class AddCommand {
 
-	public static void exec(String type, Scanner s) {
+	public static void exec(Scanner s) {
+		System.out.println("Enter type of item to add: ");
+		String type = s.nextLine();
+
 		InventoryItem newItem = null;
 
 		switch (type) {

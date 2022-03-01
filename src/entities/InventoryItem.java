@@ -16,7 +16,7 @@ public class InventoryItem {
 
 			String input = s.nextLine();
 			Object value = null;
- 
+
 			switch (type.getSimpleName()) {
 			case "String":
 				value = input;
