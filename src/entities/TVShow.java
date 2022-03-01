@@ -10,4 +10,9 @@ public class TVShow extends InventoryItem {
 		year = y;
 		name = nam;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + "Name: " + name + "\nRating: " + rating + "\nYear: " + year + "\n";
+	}
 }

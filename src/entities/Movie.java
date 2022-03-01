@@ -17,5 +17,4 @@ public class Movie extends InventoryItem {
 	public String toString() {
 		return super.toString() + "Name: " + name + "\nLength: " + length + "\nYear: " + year + "\nContent Rating: " + contentRating + "\n";
 	}
-
 }
