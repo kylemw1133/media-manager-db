@@ -13,19 +13,19 @@ public class Main {
 			String command = s.next();
 			switch (command) {
 			case "add":
-				AddCommand.exec(args);
+				AddCommand.exec();
 				break;
 			case "edit":
-				EditCommand.exec(args);
+				EditCommand.exec();
 				break;
 			case "search":
-				SearchCommand.exec(args);
+				SearchCommand.exec();
 				break;
 			case "order":
-				OrderCommand.exec(args);
+				OrderCommand.exec();
 				break;
 			case "report":
-				ReportCommand.exec(args);
+				ReportCommand.exec();
 				break;
 			case "exit":
 				promptUser = false;
