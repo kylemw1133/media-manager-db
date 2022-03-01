@@ -4,13 +4,11 @@ import commands.*;
 import data.*;
 
 public class Main {
-	
-	public int test = 5;
-	
-	public static void main(String[] args) {		
+
+	public static void main(String[] args) {
 		boolean promptUser = true;
 		Scanner s = new Scanner(System.in);
-		while(promptUser) {
+		while (promptUser) {
 			System.out.println("Enter db command (add, edit, search, order, report, exit):");
 			String command = s.nextLine();
 			switch (command) {
@@ -39,6 +37,6 @@ public class Main {
 			}
 		}
 		s.close();
-	}	
+	}
 
 }
