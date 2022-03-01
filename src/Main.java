@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 import commands.*;
 import data.*;
+import entities.InventoryItem;
+import entities.Movie;
 
 public class Main {
 	
@@ -13,7 +15,11 @@ public class Main {
 			String command = s.next();
 			switch (command) {
 			case "add":
-				AddCommand.exec();
+				
+				System.out.println("Enter type of item to add: ");
+				String inventoryType = s.next();
+				
+				AddCommand.exec(inventoryType);
 				break;
 			case "edit":
 				EditCommand.exec();
