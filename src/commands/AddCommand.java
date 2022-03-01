@@ -1,13 +1,25 @@
 package commands;
 import data.*;
+import entities.*;
 
 public class AddCommand {
 	
-	public static void exec(String[] args) {
-		System.out.println("add logic goes here");
+	public static void exec() {
+		String type = "album";
+		InventoryItem newItem = null;
+		
+		switch (type) {
+		case "album":
+			newItem = new Album();
+			break;
+		default:
+			System.out.println("Invalid item type");
+			return;
+		}
+		
 		FakeDatabase database = FakeDatabase.getInstance();
-		database.addAlbum();
-		System.out.println("New album added. Number of albums: " + database.numberOfAlbums);
+		database.addItem(newItem);
+		System.out.println("New " + type + " added.");
 	}
 
 }
