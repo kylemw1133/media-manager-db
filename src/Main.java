@@ -9,7 +9,7 @@ public class Main {
 		boolean promptUser = true;
 		Scanner s = new Scanner(System.in);
 		while(promptUser) {
-			System.out.println("Enter db command:");
+			System.out.println("Enter db command (add, edit, search, order, report, exit):");
 			String command = s.next();
 			switch (command) {
 			case "add":
