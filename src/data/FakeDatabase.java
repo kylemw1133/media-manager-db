@@ -1,5 +1,9 @@
 package data;
 
+import java.util.ArrayList;
+import entities.InventoryItem;
+
+
 public class FakeDatabase implements Database {
 	
 	/* Singleton Pattern */
@@ -14,10 +18,23 @@ public class FakeDatabase implements Database {
 	}
 	
 	/* Database Data */
-	public int numberOfAlbums = 0;
+	public ArrayList<InventoryItem> inventoryItems = new ArrayList<InventoryItem>();
 	
-	public void addAlbum() {
-		numberOfAlbums += 1;
+	public void addItem(InventoryItem item) {
+		inventoryItems.add(item);
+	}
+	
+	// TODO:
+	public void editItem() {
+		System.out.println("Not implemented");
+	}
+	
+	public void findItems() {
+		System.out.println("Not implemented");
+	}
+	
+	public void orderItem() {
+		System.out.println("Not implemented");
 	}
 
 	

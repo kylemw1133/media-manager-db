@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 import commands.*;
 import data.*;
+import entities.InventoryItem;
+import entities.Movie;
 
 public class Main {
 
@@ -9,23 +11,25 @@ public class Main {
 		boolean promptUser = true;
 		Scanner s = new Scanner(System.in);
 		while (promptUser) {
-			System.out.println("Enter db command:");
+			System.out.println("Enter db command (add, edit, search, order, report, exit):");
 			String command = s.next();
 			switch (command) {
 				case "add":
-					AddCommand.exec(args);
+					System.out.println("Enter type of item to add: ");
+					String inventoryType = s.next();
+					AddCommand.exec(inventoryType);
 					break;
 				case "edit":
-					EditCommand.exec(args);
+					EditCommand.exec();
 					break;
 				case "search":
-					SearchCommand.exec(args);
+					SearchCommand.exec();
 					break;
 				case "order":
-					OrderCommand.exec(args);
+					OrderCommand.exec();
 					break;
 				case "report":
-					ReportCommand.exec(args);
+					ReportCommand.exec();
 					break;
 				case "exit":
 					promptUser = false;

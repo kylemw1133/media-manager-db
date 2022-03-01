@@ -2,7 +2,7 @@ package commands;
 
 public class OrderCommand {
 	
-	public static void exec(String[] args) {
+	public static void exec() {
 		System.out.println("order logic goes here");
 	}
 
