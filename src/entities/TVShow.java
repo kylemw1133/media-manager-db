@@ -1,18 +1,18 @@
 package entities;
 
+import java.util.Scanner;
+
 public class TVShow extends InventoryItem {
 	public int rating;
 	public int year;
-	public String name;
-	public TVShow(int rat, int y, String nam, int quant, String form, String loc, long lis) {
-		super(quant, form, loc, lis);
+	
+	public TVShow(int rat, int yr, int quant, String form, String loc, long lic, String nm) {
+		super(quant, form, loc, lic, nm);
 		rating = rat;
-		year = y;
-		name = nam;
+		year = yr;
 	}
 	
-	@Override
-	public String toString() {
-		return super.toString() + "Name: " + name + "\nRating: " + rating + "\nYear: " + year + "\n";
+	public TVShow(Scanner s) {
+		super(s);
 	}
 }
