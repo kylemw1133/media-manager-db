@@ -1,6 +1,7 @@
 package data;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import entities.InventoryItem;
@@ -51,18 +52,19 @@ public class FakeDatabase implements Database {
 		
 	}
 	
-	public void findItems(String name) {
+	public List<InventoryItem> findItems(String name) {
 		ArrayList<InventoryItem> foundItems = new ArrayList<InventoryItem>();
-		for(InventoryItem i : inventoryItems) {
-			if(i.name.toLowerCase().indexOf(name.toLowerCase()) >= 0) {
+		for (InventoryItem i : inventoryItems) {
+			if (i.name.toLowerCase().indexOf(name.toLowerCase()) >= 0) {
 				foundItems.add(i);
 			}
 		}
-		if(foundItems.isEmpty()) {
+
+		if (foundItems.isEmpty()) {
 			System.out.println("No items found.\n");
-			return;
 		}
-		System.out.println(foundItems);
+
+		return foundItems;
 	}
 	
 	public void orderItem(String name, int orderAmount) {

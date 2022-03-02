@@ -10,6 +10,6 @@ public class SearchCommand {
 		System.out.println("Enter the keyword: ");
 		String key = s.nextLine();
 		
-		FakeDatabase.getInstance().findItems(key);
+		System.out.println(FakeDatabase.getInstance().findItems(key));
 	}
 }
