@@ -1,8 +1,10 @@
 package data;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import entities.InventoryItem;
-import entities.Movie;
+
 
 public class FakeDatabase implements Database {
 	
@@ -32,15 +34,21 @@ public class FakeDatabase implements Database {
 		System.out.println(inventoryItems);
 	}
 	
-	// TODO:
-	public void editItem(String type, String name, String attribute, String value) {
+	public void editItem(String name, Scanner s) {
+		//Scanner sc = new Scanner(System.in);
+		boolean found = false;
 		for(int i = 0; i<inventoryItems.size();i++) {
 			InventoryItem item = inventoryItems.get(i);
-			if(item.canEdit(attribute, value.getClass().getSimpleName())) {
-				//can edit item (how do we reach specific media item's attributes???
-				
+			if(item.name.equals(name)) {
+				item.promptForAttributes(s);
+				found = true;
 			}
 		}
+		if(!found) {
+			System.out.println("There is no item with name " +name);
+		}
+		//sc.close();
+		
 	}
 	
 	public void findItems(String name) {
@@ -57,15 +65,18 @@ public class FakeDatabase implements Database {
 		System.out.println(foundItems);
 	}
 	
-	public void orderItem() {
-		System.out.println("Not implemented");
+	public void orderItem(String name, int orderAmount) {
+		boolean found = false;
+		for(int i = 0; i<inventoryItems.size();i++) {
+			InventoryItem item = inventoryItems.get(i);
+			if(item.name.toLowerCase().indexOf(name.toLowerCase()) >= 0) {
+				item.quantity+=orderAmount;
+				found = true;
+			}
+		}
+		if(!found) {
+			System.out.println("No item could be found. Add before ordering");
+		}
 	}
 
-	@Override
-	public void editItem(String name, String attribute, String value) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 }
