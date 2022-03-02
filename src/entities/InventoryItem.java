@@ -46,6 +46,14 @@ public class InventoryItem {
 		this.promptForAttributes(s);
 	}
 	
+	public InventoryItem(int quant, String form, String loc, long lic, String nm) {
+		quantity = quant;
+		format = form;
+		location = loc;
+		licensingNumber = lic;
+		name = nm;
+	}
+	
 	public boolean canEdit(String attribute, String valueType) {
 		for(Field f : this.getClass().getFields()) {
 			Class<?> type = f.getType();

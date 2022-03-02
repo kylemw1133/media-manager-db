@@ -26,8 +26,10 @@ public class FakeDatabase implements Database {
 		} else {
 			inventoryItems.add(item);
 		}
+	}
+	
+	public void printItems() {
 		System.out.println(inventoryItems);
-		
 	}
 	
 	// TODO:
