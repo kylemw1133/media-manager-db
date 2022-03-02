@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class AddCommand {
 
 	public static void exec(Scanner s) {
-		System.out.println("Enter type of item to add: ");
+		System.out.println("Enter type of item to add (album, movie, tvshow, audiobook): ");
 		String type = s.nextLine();
 
 		InventoryItem newItem = null;

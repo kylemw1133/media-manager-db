@@ -26,9 +26,8 @@ public class FakeDatabase implements Database {
 		} else {
 			inventoryItems.add(item);
 		}
-		for(InventoryItem i : inventoryItems) {
-			System.out.println(i);
-		}
+		System.out.println(inventoryItems);
+		
 	}
 	
 	// TODO:
@@ -43,15 +42,27 @@ public class FakeDatabase implements Database {
 	}
 	
 	public void findItems(String name) {
-		for(InventoryItem i:inventoryItems) {
-			if(i.name.equals(name)) {
-				System.out.println(i);
+		ArrayList<InventoryItem> foundItems = new ArrayList<InventoryItem>();
+		for(InventoryItem i : inventoryItems) {
+			if(i.name.toLowerCase().indexOf(name.toLowerCase()) >= 0) {
+				foundItems.add(i);
 			}
 		}
+		if(foundItems.isEmpty()) {
+			System.out.println("No items found.\n");
+			return;
+		}
+		System.out.println(foundItems);
 	}
 	
 	public void orderItem() {
 		System.out.println("Not implemented");
+	}
+
+	@Override
+	public void editItem(String name, String attribute, String value) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

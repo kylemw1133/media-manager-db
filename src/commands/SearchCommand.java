@@ -7,12 +7,9 @@ import data.FakeDatabase;
 public class SearchCommand {
 
 	public static void exec(Scanner s) {
-
-		System.out.println("Enter the name of the item you are searching for: ");
-		String name = s.next();
+		System.out.println("Enter the keyword: ");
+		String key = s.nextLine();
 		
-		FakeDatabase.getInstance().findItems(name);
-		
+		FakeDatabase.getInstance().findItems(key);
 	}
-
 }
