@@ -12,11 +12,10 @@ public class Main {
 			System.out.println("Enter db command (add, edit, search, order, report, exit):");
 			String command = s.next();
 			switch (command) {
-<<<<<<< HEAD
 				case "add":
 					System.out.println("Enter type of item to add: ");
 					String inventoryType = s.next();
-					AddCommand.exec(inventoryType);
+					AddCommand.exec(inventoryType, s);
 					break;
 				case "edit":
 					EditCommand.exec();
@@ -35,30 +34,6 @@ public class Main {
 					break;
 				default:
 					System.out.println("Invalid subcommand: " + command);
-=======
-			case "add":
-				System.out.println("Enter type of item to add: ");
-				String inventoryType = s.next();
-				AddCommand.exec(inventoryType, s);
-				break;
-			case "edit":
-				EditCommand.exec();
-				break;
-			case "search":
-				SearchCommand.exec();
-				break;
-			case "order":
-				OrderCommand.exec();
-				break;
-			case "report":
-				ReportCommand.exec();
-				break;
-			case "exit":
-				promptUser = false;
-				break;
-			default:
-				System.out.println("Invalid subcommand: " + command);
->>>>>>> 0d8a0a1327077c03fdc04d8ed6dafd65f07eb645
 			}
 		}
 		s.close();
